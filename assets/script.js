@@ -46,6 +46,10 @@ $(function () {
     var textArea = $('<textarea>');
     textArea.addClass('col-8 col-md-10 description');
     textArea.attr('rows', 3);
+    savedText = localStorage.getItem(`hour-${i}`);
+    if (savedText){
+      textArea.text(savedText);
+    }
     newHour.append(textArea);
     var btn =  $('<button>');
     btn.addClass("btn saveBtn col-2 col-md-1");
@@ -64,7 +68,8 @@ $(function () {
 
     var theHour = $(this).parent().attr("id");
     console.log(theHour);
-
+    var textToSave = $(`#${theHour}`).children().eq(1).val();
+    localStorage.setItem(theHour, textToSave);
   })
 
 
