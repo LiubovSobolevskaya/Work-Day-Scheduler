@@ -1,20 +1,12 @@
 $(function () {
-  // Set the text of the  header to today's date using the dayjs library
-  
-  var rootEl = $('.container-lg'); 
-  console.log(rootEl)
-  // update the page every second
-
-     
-
-    $("#currentDay").text(dayjs().format("MMMM DD YYYY"));
-
-    // Get the current hour using dayjs 
-    
 
     // Get a reference to the root element of the page, which has the "container-lg" class
+    var rootEl = $('.container-lg'); 
 
+      // Set the text of the  header to today's date using the dayjs library
+    $("#currentDay").text(dayjs().format("MMMM DD YYYY"));
 
+  
     // Loop over the hours from 9am to 5pm
     for (var i=9; i<18; i++){
       // Create a new div element for each hour and add the appropriate classes based on the current time
@@ -57,8 +49,11 @@ $(function () {
       var textToSave = $(`#${theHour}`).children().eq(1).val();
       localStorage.setItem(theHour, textToSave);
     })
-    
+     
+
+    // update the page every second
     function updateTime(){
+      // Get the current hour using dayjs 
       currentHour = dayjs().hour();
       for (var i=9; i<18; i++){
         newHour = $(`#hour-${i}`);
