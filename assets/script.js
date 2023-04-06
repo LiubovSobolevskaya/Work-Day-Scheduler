@@ -1,5 +1,5 @@
 $(function () {
-  // Set the text of the "currentDay" element to today's date using the dayjs library
+  // Set the text of the  header to today's date using the dayjs library
   $("#currentDay").text(dayjs().format("MMMM DD YYYY"));
 
   // Get the current hour using dayjs 
