@@ -6,13 +6,23 @@ $(function () {
       // Set the text of the  header to today's date using the dayjs library
     $("#currentDay").text(dayjs().format("MMMM DD YYYY"));
 
-  
+    currentHour = dayjs().hour();
     // Loop over the hours from 9am to 5pm
     for (var i=9; i<18; i++){
+      
       // Create a new div element for each hour and add the appropriate classes based on the current time
       var newHour = $('<div>');
       newHour.attr('id', `hour-${i}`).addClass('row time-block');
-   
+      if (i <currentHour ){
+          newHour.removeClass('present', 'future').addClass('past');
+        }
+        else if (i === currentHour ){
+          newHour.removeClass('past', 'future').addClass('present');
+        }
+        else{
+          newHour.removeClass('past', 'present').addClass('future');
+        }
+      
       // Create a div element to display the hour and add the appropriate text based on the current time
       var hourDiv = $('<div>').addClass('col-2 col-md-1 hour text-center py-3"');
       if (i < 12){
