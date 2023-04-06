@@ -10,7 +10,7 @@ $(function () {
     $("#currentDay").text(dayjs().format("MMMM DD YYYY"));
 
     // Get the current hour using dayjs 
-    currentHour = dayjs().hour();
+    
 
     // Get a reference to the root element of the page, which has the "container-lg" class
 
@@ -59,6 +59,7 @@ $(function () {
     })
     
     function updateTime(){
+      currentHour = dayjs().hour();
       for (var i=9; i<18; i++){
         newHour = $(`#hour-${i}`);
         if (i <currentHour ){
