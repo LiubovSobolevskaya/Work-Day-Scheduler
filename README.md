@@ -35,7 +35,7 @@ ____________________________________
 
 Here is the web application's appearance.:
 
-![](./assets/imgs/05-third-party-apis-homework-demo.gif)
+![](./assets/imgs/ezgif.com-video-to-gif.gif)
 
 ## Author Info
 
