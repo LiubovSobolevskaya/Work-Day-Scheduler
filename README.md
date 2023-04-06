@@ -31,9 +31,7 @@ ____________________________________
 * [JavaScript](https://www.javascript.com/)
 * [JQuery](https://jquery.com/)
 
-## Mock-Up
-
-Here is the web application's appearance.:
+## Web application's appearance and functionality
 
 ![](./assets/imgs/ezgif.com-video-to-gif.gif)
 
