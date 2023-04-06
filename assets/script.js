@@ -14,14 +14,14 @@ $(function () {
       var newHour = $('<div>');
       newHour.attr('id', `hour-${i}`).addClass('row time-block');
       if (i <currentHour ){
-          newHour.removeClass('present', 'future').addClass('past');
-        }
-        else if (i === currentHour ){
-          newHour.removeClass('past', 'future').addClass('present');
-        }
-        else{
-          newHour.removeClass('past', 'present').addClass('future');
-        }
+          newHour.addClass('past');
+      }
+      else if (i === currentHour ){
+          newHour.addClass('present');
+      }
+      else{
+          newHour.addClass('future');
+      }
       
       // Create a div element to display the hour and add the appropriate text based on the current time
       var hourDiv = $('<div>').addClass('col-2 col-md-1 hour text-center py-3"');
@@ -65,6 +65,7 @@ $(function () {
     function updateTime(){
       // Get the current hour using dayjs 
       currentHour = dayjs().hour();
+      //update class to represent past, present or future
       for (var i=9; i<18; i++){
         newHour = $(`#hour-${i}`);
         if (i <currentHour ){
