@@ -18,6 +18,7 @@ ____________________________________
 ## Mock-Up
 
 Here is the web application's appearance.:
+
 ![](./assets/imgs/05-third-party-apis-homework-demo.gif)
 
 ## Author Info
