@@ -70,13 +70,26 @@ $(function () {
       for (var i=9; i<18; i++){
         newHour = $(`#hour-${i}`);
         if (i <currentHour ){
-          newHour.removeClass('past', 'present', 'future').addClass('past');
+          if (newHour.hasClass('present')){
+             newHour.removeClass('present').addClass('past');
+          }
+          else if (newHour.hasClass('future')){
+            newHour.removeClass('future').addClass('past');
+          }
         }
         else if (i === currentHour ){
-          newHour.removeClass('past', 'present', 'future').addClass('present');
+          if (newHour.hasClass('past')){
+            newHour.removeClass('past').addClass('present');
+          } else if (newHour.hasClass('future')){
+            newHour.removeClass('future').addClass('present');
+          }
         }
         else{
-          newHour.removeClass('past', 'present', 'future').addClass('future');
+          if (newHour.hasClass('present')){
+            newHour.removeClass('present').addClass('future');
+          } else if (newHour.hasClass('past')){
+            newHour.removeClass('past').addClass('furture');
+          }
         }
       }
     }
