@@ -63,19 +63,20 @@ $(function () {
 
     // update the page every second
     function updateTime(){
+      $("#currentDay").text(dayjs().format("MMMM DD YYYY"));
       // Get the current hour using dayjs 
       currentHour = dayjs().hour();
       //update class to represent past, present or future
       for (var i=9; i<18; i++){
         newHour = $(`#hour-${i}`);
         if (i <currentHour ){
-          newHour.removeClass('present', 'future').addClass('past');
+          newHour.removeClass('past', 'present', 'future').addClass('past');
         }
         else if (i === currentHour ){
-          newHour.removeClass('past', 'future').addClass('present');
+          newHour.removeClass('past', 'present', 'future').addClass('present');
         }
         else{
-          newHour.removeClass('past', 'present').addClass('future');
+          newHour.removeClass('past', 'present', 'future').addClass('future');
         }
       }
     }
